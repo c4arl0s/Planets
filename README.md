@@ -1,7 +1,7 @@
 # Planets
 it calculates the distance between planes of the solar system.
 
-```
+``` swift
 import Foundation
 
 enum Planet {
@@ -45,5 +45,24 @@ enum Planet {
         return (self.distanceFromSunAU - Planet.Earth.distanceFromSunAU).magnitude
     }
 }
+```
+
+``` swift
+class ViewController: UIViewController {
+    @IBOutlet weak var distanceBox: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let planetMars = Planet.Mars
+        distanceBox.text = "\(planetMars.distanceFromAU(otherPlanet: .Jupiter))"
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
+
 ```
 
